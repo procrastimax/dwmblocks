@@ -5,6 +5,7 @@ static const Block blocks[] = {
     {"RAM ", "free | awk '/^Mem/ { x=$3; y=$7; printf x/y*100}'| cut -c1-4",  30,                   0},
     {"DISK ", "df -t ext4 | grep '/' | awk '{print $5}'",                     60,		            0},
 	{"BAT ", "acpi -b | awk '{ print $4 $5 }' | sed 's/,/ /g'",               30,		            0},
+	{"ALSA ", "sh ~/programs/dwmblocks/scripts/alsa_status.sh",               0,		            10},
 	{"", "date '+%b %d. %a %H:%M:%S'",					                      5,            		0},
 };
 
