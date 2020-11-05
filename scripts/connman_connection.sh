@@ -2,7 +2,7 @@
 
 # This script retrieves information about the current internet connection with connman
 
-SERVICENAME=$(connmanctl services | grep -E "^\*AO|^\*O" | grep -Eo 'wifi_.*|ethernet_.*')
+SERVICENAME=$(connmanctl services | grep -E "^\*AO|^\*O|^\*AR" | grep -Eo 'wifi_.*|ethernet_.*')
 
 if [ ! "$SERVICENAME" ]; then
     printf "OFFLINE"
