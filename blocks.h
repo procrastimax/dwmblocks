@@ -6,7 +6,7 @@ static const Block blocks[] = {
     {"", "printf '/: %s' $(df -t ext4 | grep '/$' | awk '{print $5}')",            60,		            0},
 	{"🔋 ", "acpi -b | awk '{ print $4 $5 }' | sed 's/,/ /g'",                        30,		            0},
 	{"🔊 ", "sh ~/programs/dwmblocks/scripts/alsa_status.sh",                         0,		            10},
-	{"☀ ", "printf '%.0f%%' $(xbacklight)",                                           0,		            11},
+	{"☀ ", "printf '%.0f%%' $(xbacklight -get)",                                      0,		            11},
 	{"", "date '+%b %d. %a %H:%M:%S'",					                              5,            		0},
 };
 
