@@ -5,7 +5,8 @@ static const Block blocks[] = {
     {"RAM ", "printf '%.2f%%' $(free | awk '/^Mem/ { x=$3; y=$7; printf x/y*100}')",  30,                   0},
     {"", "printf '/: %s' $(df -t xfs | grep '/$' | awk '{print $5}')",            60,		            0},
 	{"🔋 ", "acpi -b | awk '{ print $4 $5 }' | sed 's/,/ /g'",                        30,		            0},
-	{"☀ ", "printf '%.0f%%' $(xbacklight)",                                           0,		            11},
+	{"🔊 ", "sh ~/programs/dwmblocks/scripts/alsa_status.sh",                         0,		            10},
+	{"☀ ", "printf '%.0f%%' $(xbacklight -get)",                                      0,		            11},
 	{"", "date '+%b %d. %a %H:%M:%S'",					                              5,            		0},
 };
 
