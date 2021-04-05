@@ -1,7 +1,12 @@
 #!/bin/sh
 
-if [ "$(playerctl status)" = "Playing" ]; then
-    printf "♫ %s" "$(playerctl metadata --format '{{ artist }} - {{ title }}')"
-elif [ "$(playerctl status)" = "Paused" ]; then
-    printf "⏸ %s" "$(playerctl metadata --format '{{ artist }} - {{ title }}')"
+STATUS="$(playerctl status)"
+
+if [ "$STATUS" = "Playing" ] || [ "$STATUS" = "Paused" ]; then
+    if [ "$STATUS" = "Playing" ]; then
+        SYMBOL="♫"
+    else
+        SYMBOL="⏸"
+    fi
+    printf "%s %s" "$SYMBOL" "$(playerctl metadata --format '{{ artist }} - {{ title }}' | tail -c 40)"
 fi
