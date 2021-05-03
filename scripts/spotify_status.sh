@@ -8,5 +8,5 @@ if [ "$STATUS" = "Playing" ] || [ "$STATUS" = "Paused" ]; then
     else
         SYMBOL="⏸"
     fi
-    printf "%s %s" "$SYMBOL" "$(playerctl metadata --format '{{ artist }} - {{ title }}' | tail -c 40)"
+    printf "%s %s" "$SYMBOL" "$(playerctl metadata --format '{{ artist }} - {{ title }}')"
 fi
