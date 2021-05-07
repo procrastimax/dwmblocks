@@ -5,6 +5,7 @@ static const Block blocks[] = {
     {"", "sh ~/programs/dwmblocks/scripts/connman_connection.sh",                           30,                   0},
     {"RAM ", "printf '%.1f%%' $(free -t | awk '/^Total/ { x=$3; y=$2; printf x/y*100}')",   30,                   0},
     {"", "printf '/: %s' $(df -t xfs | grep '/$' | awk '{print $5}')",                      60,                   0},
+    {"", "printf '/storage: %s' $(df -t xfs | grep '/media/storage' | awk '{print $5}')",   60,                   0},
     {"", "date '+%b %d. %a %H:%M:%S'",                                                      5,                    0},
 };
 
